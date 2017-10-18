@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>一个golang编写的websocket小实例</title>
+</head>
+<body>
+<h1>websocket回声程序</h1>
+<div id="screen">
+</div>
+<input id="msg" type="text"/>
+<button onclick="sendws()">发送</button>
+<button onclick="openws()">打开一个websocket连接</button>
+<button onclick="closews()">关闭一个websocket连接</button>
+</body>
+<script>
+    var ws;
+    openws();
+    ws.addEventListener("message", function (event) {
+        p = document.createElement("p");
+        p.textContent = event.data;
+        document.querySelector("#screen").appendChild(p)
+    });
+
+    function openws() {
+        ws = new WebSocket("ws://127.0.0.1:8080/echo");
+        p = document.createElement("p");
+        p.textContent = "[连接成功]：欢迎你，Bruce";
+        document.querySelector("#screen").appendChild(p)
+    }
+
+    function closews() {
+        ws.close();
+    }
+
+    function sendws() {
+        if (ws.readyState === WebSocket.CLOSED) {
+            openws()
+        }
+        var msg = document.querySelector("#msg").value;
+        ws.send(msg);
+    }
+</script>
+</html>
