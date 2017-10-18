@@ -158,22 +158,22 @@ func (c *Conn) ReadData() (data []byte, err error) {
 func upgrade(w http.ResponseWriter, r *http.Request) (c *Conn, err error) {
 
 	/*
-		    一个ws request 请求的格式
+		一个ws request 请求的格式
 
-			Accept-Encoding:gzip, deflate, br
-			Accept-Language:zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4
-			Cache-Control:no-cache
-			Connection:Upgrade
-			Cookie:olfsk=olfsk1987334287312954; hblid=QOfjOXpze8nJoC873m39N0H8RE0Qt2wb
-			DNT:1
-			Host:127.0.0.1:8080
-			Origin:http://localhost:8080
-			Pragma:no-cache
-			Sec-WebSocket-Extensions:permessage-deflate; client_max_window_bits
-			Sec-WebSocket-Key:CkBSTPOI0xXQjX+cfLKYLQ==
-			Sec-WebSocket-Version:13
-			Upgrade:websocket
-			User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
+		Accept-Encoding:gzip, deflate, br
+		Accept-Language:zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4
+		Cache-Control:no-cache
+		Connection:Upgrade
+		Cookie:olfsk=olfsk1987334287312954; hblid=QOfjOXpze8nJoC873m39N0H8RE0Qt2wb
+		DNT:1
+		Host:127.0.0.1:8080
+		Origin:http://localhost:8080
+		Pragma:no-cache
+		Sec-WebSocket-Extensions:permessage-deflate; client_max_window_bits
+		Sec-WebSocket-Key:CkBSTPOI0xXQjX+cfLKYLQ==
+		Sec-WebSocket-Version:13
+		Upgrade:websocket
+		User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
 	*/
 
 	if r.Method != "GET" {
