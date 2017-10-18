@@ -33,7 +33,6 @@ Accept-Encoding:gzip, deflate, br
 Accept-Language:zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4
 Cache-Control:no-cache
 Connection:Upgrade
-Cookie:olfsk=olfsk1987334287312954; hblid=QOfjOXpze8nJoC873m39N0H8RE0Qt2wb
 DNT:1
 Host:127.0.0.1:8080
 Origin:http://localhost:8080
